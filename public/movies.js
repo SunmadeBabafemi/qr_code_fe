@@ -1,10 +1,11 @@
 import {axios} from '../public/bundle.js'
 let movies 
-
+const backend_base_url_local= 'http://localhost:7007'
+const backend_base_url_dev= 'https://qr-code-gen-p6ts.onrender.com'
 const movieFetch = async() => {
   try {
     const response = await axios.get(
-      'https://qr-code-gen-p6ts.onrender.com/api/v1/movies/find-by-qr-code'
+      backend_base_url_local+'/api/v1/movies/find-by-qr-code'
     ) 
     console.log("🚀 ~ file: index.js:23 ~ movieFetch ~ response:", response?.data?.data)
 

@@ -2,8 +2,10 @@ import {axios} from '../public/bundle.js'
 let movies, qr_code 
 const qrCodeFetch = async() => {
   try {
+    const backend_base_url_dev= "https://qr-code-gen-p6ts.onrender.com"
+    const backend_base_url_local= "http://localhost:7007"
     const response = await axios.get(
-      'http://localhost:7007/api/v1/movies/generate-qr-code'
+      backend_base_url_dev+'/api/v1/movies/generate-qr-code'
     ) 
     console.log("🚀 ~ file: index.js:9 ~ qrCodeFetch ~ qr_code:", response?.data?.data)
 
