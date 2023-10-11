@@ -1,4 +1,4 @@
-import {axios} from '../public/bundle.js'
+import {axios} from '/bundle.js'
 let movies 
 const backend_base_url_local= 'http://localhost:7007'
 const backend_base_url_dev= 'https://qr-code-gen-p6ts.onrender.com'
