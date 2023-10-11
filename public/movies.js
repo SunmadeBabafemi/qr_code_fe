@@ -4,7 +4,7 @@ let movies
 const movieFetch = async() => {
   try {
     const response = await axios.get(
-      'http://localhost:7007/api/v1/movies/find-by-qr-code'
+      'https://qr-code-gen-p6ts.onrender.com/api/v1/movies/find-by-qr-code'
     ) 
     console.log("🚀 ~ file: index.js:23 ~ movieFetch ~ response:", response?.data?.data)
 
