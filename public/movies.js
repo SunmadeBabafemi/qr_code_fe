@@ -5,7 +5,7 @@ const backend_base_url_dev= 'https://qr-code-gen-p6ts.onrender.com'
 const movieFetch = async() => {
   try {
     const response = await axios.get(
-      backend_base_url_dev+'/api/v1/movies/find-by-qr-code'
+      backend_base_url_local+'/api/v1/movies/find-by-qr-code'
     ) 
     console.log("🚀 ~ file: index.js:23 ~ movieFetch ~ response:", response?.data?.data)
 
