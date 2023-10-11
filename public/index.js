@@ -40,7 +40,6 @@ if(typeof window !== 'undefined'){
     console.log("THIS IS CLIENT SIDE !!!");
 
   refreshQRCOde.src = await qrCodeFetch()
-  console.log("🚀 ~ file: index.js:43 ~ window.onload= ~ qrCodeFetch:", qrCodeFetch)
   }
   console.log("THIS IS CLIENT SIDE");
 } else {
