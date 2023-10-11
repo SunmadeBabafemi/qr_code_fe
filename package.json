@@ -6,7 +6,6 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
-    "build": "init",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"NODE_OPTIONS='--experimental-specifier-resolution=node' node server.js",
     "dev": "NODE_OPTIONS='--experimental-specifier-resolution=node' nodemon server.js",
