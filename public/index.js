@@ -14,7 +14,6 @@ const qrCodeFetch = async() => {
   }
  
 }
-// qrCodeFetch()
 
 if(typeof window !== 'undefined'){
   const refreshTimer = document.getElementById('refresh-timer');

@@ -32,6 +32,24 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(500, { 'Content-Type': 'text/plain' });
       res.end('Internal Server Error');
     }
+  } else if (req.url === `/movies`) {
+    const filePath = join(__dirname, 'public', 'movies.html');
+
+    // Read the HTML file
+    try {
+      const data = await fs.readFile(filePath, 'utf8', (e, d) => {
+      // console.log("🚀 ~ file: server.js:27 ~ data ~ d:", d)
+        
+      });
+
+      // Respond with the HTML content
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(data);
+    } catch (err) {
+      console.log("🚀 ~ file: server.js:30 ~ server ~ err:", err)
+      res.writeHead(500, { 'Content-Type': 'text/plain' });
+      res.end('Internal Server Error');
+    }
   } else if (req.url === '/public/index.js') {
     const jsFilePath = join(__dirname, 'public', 'index.js');
 
@@ -49,7 +67,25 @@ const server = http.createServer(async (req, res) => {
       res.end('Internal Server Error');
     }
 
-  } else if (req.url === '/public/bundle.js') {
+  } 
+  else if (req.url === '/public/movies.js') {
+    const jsFilePath = join(__dirname, 'public', 'movies.js');
+
+    // Read the JavaScript file
+    try {
+      const jsData = await fs.readFile(jsFilePath, 'utf8', (e, d) =>{
+
+      });
+
+      // Respond with the JavaScript content
+      res.writeHead(200, { 'Content-Type': 'application/javascript' });
+      res.end(jsData);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'text/plain' });
+      res.end('Internal Server Error');
+    }
+
+  }else if (req.url === '/public/bundle.js') {
     const jsFilePath = join(__dirname, 'public', 'bundle.js');
 
     // Read the JavaScript file
@@ -83,7 +119,24 @@ const server = http.createServer(async (req, res) => {
       res.end('Internal Server Error');
     }
 
-  }else {
+  }else if (req.url === '/public/assets/Header.svg ') {
+    const jsFilePath = join(__dirname,'public', 'assets','Header.svg');
+
+    // Read the SVG file
+    try {
+      const jsData = await fs.readFile(jsFilePath, 'utf8', (e, d) =>{
+        
+      });
+
+      // Respond with the SVG content
+      res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
+      res.end(jsData);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'text/plain' });
+      res.end('Internal Server Error');
+    }
+
+  }  else {
     // Handle other routes
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Not Found');
