@@ -1,4 +1,4 @@
-import {axios} from '../public/bundle.js'
+import {axios} from '../bundle.js'
 let movies, qr_code 
 const qrCodeFetch = async() => {
   try {
